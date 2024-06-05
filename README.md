@@ -25,7 +25,8 @@ Then, add a configuration file with the names and routes you want links for:
 DevToolbar.configure do |config|
   config.links = [
     { name: "Routes", path: "/rails/info/routes" },
-    { name: "Database", path: "/rails/db" },
+    { name: "Database", path: "/rails/db" }, # rails_db gem must be installed
+    { name: "Data Model", path: "/erd.png" }, # erd.png must be in public/ folder
     # etc.
   ]
 end
