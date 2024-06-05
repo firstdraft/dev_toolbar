@@ -4,10 +4,10 @@ module DevToolbar
       return unless Rails.env.development?
 
       links = DevToolbar.configuration.links.map do |link|
-        link_to(link[:name], link[:path], style: 'color: #fff; margin-right: 10px;')
+        link_to(link[:name], link[:path])
       end.join.html_safe
 
-      content_tag(:div, links, id: 'dev-toolbar', style: 'position: fixed; right: 0; top: 0; background: #333; color: #fff; padding: 10px; z-index: 1000;')
+      content_tag(:div, links, id: 'dev-toolbar')
     end
   end
 end

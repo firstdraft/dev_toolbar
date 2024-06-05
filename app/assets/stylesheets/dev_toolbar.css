@@ -1,4 +1,14 @@
+#dev-toolbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #333;
+  color: #fff;
+  padding: 2rem;
+  z-index: 1000;
+}
+
 #dev-toolbar a {
   color: #fff;
-  margin-right: 10px;
+  margin-right: 2rem;
 }
