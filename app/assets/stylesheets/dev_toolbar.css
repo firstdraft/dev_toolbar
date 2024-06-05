@@ -4,11 +4,11 @@
   top: 0;
   background: #333;
   color: #fff;
-  padding: 2rem;
+  padding: 10px;
   z-index: 1000;
 }
 
 #dev-toolbar a {
   color: #fff;
-  margin-right: 2rem;
+  margin-right: 10px;
 }
