@@ -3,7 +3,7 @@
 require_relative "dev_toolbar/version"
 require_relative "dev_toolbar/railtie"
 require_relative "dev_toolbar/toolbar_helper"
-require "dev_toolbar/configuration"
+require_relative "dev_toolbar/configuration"
 
 module DevToolbar
   class Error < StandardError; end
