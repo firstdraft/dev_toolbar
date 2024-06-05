@@ -10,10 +10,20 @@ module DevToolbar
       if Rails.env.development? && headers["Content-Type"]&.include?("text/html")
         response_body = response.body
         toolbar_html = <<-HTML
-          <div id="dev-toolbar" style="position: fixed; right: 0; top: 0; background: #333; color: #fff; padding: 0.5rem; z-index: 1000;">
+          <div id="dev-toolbar">
             #{toolbar_links}
           </div>
           <style>
+            #dev-toolbar {
+              position: fixed;
+              right: 0;
+              top: 0;
+              background: #333;
+              color: #fff;
+              padding: 0.5rem;
+              z-index: 1000;
+            }
+
             #dev-toolbar a {
               color: #fff;
               margin-right: 0.5rem;
