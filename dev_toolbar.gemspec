@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "dev_toolbar"
   spec.version = DevToolbar::VERSION
   spec.authors = ["Ben Purinton"]
-  spec.email = ["ben.purinton@gmail.com"]
+  spec.email = ["ben@firstdraft.com"]
 
   spec.summary = "TODO: Write a short summary, because RubyGems requires one."
   spec.description = "TODO: Write a longer description or delete this line."
