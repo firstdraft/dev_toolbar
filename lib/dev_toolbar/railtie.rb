@@ -8,8 +8,8 @@ module DevToolbar
 
     initializer "dev_toolbar.assets" do |app|
       app.config.assets.precompile += %w(dev_toolbar.css dev_toolbar.js)
-      app.config.assets.paths << File.expand_path('../../app/assets/stylesheets', __FILE__)
-      app.config.assets.paths << File.expand_path('../../app/assets/javascripts', __FILE__)
+      app.config.assets.paths << File.expand_path('../../../app/assets/stylesheets', __FILE__)
+      app.config.assets.paths << File.expand_path('../../../app/assets/javascripts', __FILE__)
     end
   end
 end
