@@ -2,7 +2,7 @@
 
 require_relative "dev_toolbar/version"
 require_relative "dev_toolbar/railtie"
-require_relative "dev_toolbar/toolbar_helper"
+require_relative "dev_toolbar/middleware"
 require_relative "dev_toolbar/configuration"
 
 module DevToolbar

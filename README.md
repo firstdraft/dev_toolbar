@@ -31,21 +31,7 @@ DevToolbar.configure do |config|
 end
 ```
 
-Finally, include the `dev_toolbar` helper in your layout file, e.g.:
-
-```html
-<!-- app/views/layouts/application.html.erb -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- ... -->
-  </head>
-  <body>
-    <%= dev_toolbar %>
-    <%= yield %>
-  </body>
-</html>
-```
+These routes will now appear on every page in your app while in development.
 
 ## Contributing
 
