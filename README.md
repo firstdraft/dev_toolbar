@@ -18,7 +18,7 @@ Then execute:
 bundle install
 ```
 
-Finally, add a configuration file with the names and routes you want links for:
+Then, add a configuration file with the names and routes you want links for:
 
 ```rb
 # config/initializers/dev_toolbar.rb
@@ -29,6 +29,22 @@ DevToolbar.configure do |config|
     # etc.
   ]
 end
+```
+
+Finally, include the `dev_toolbar` helper in your layout file, e.g.:
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <%= dev_toolbar %>
+    <%= yield %>
+  </body>
+</html>
 ```
 
 ## Development
