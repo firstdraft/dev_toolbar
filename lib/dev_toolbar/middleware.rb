@@ -16,8 +16,8 @@ module DevToolbar
           <style>
             #dev-toolbar {
               position: fixed;
-              right: 0;
-              bottom: 0;
+              right: 5%;
+              bottom: 5%;
               background: #fff;
               color: #000;
               padding: 0.5rem;
@@ -28,8 +28,9 @@ module DevToolbar
             }
       
             #dev-toolbar a {
-              text-decoration: none;
+              text-decoration: underline;
               color: #000;
+              margin-right: 10px;
             }
           </style>
         HTML
