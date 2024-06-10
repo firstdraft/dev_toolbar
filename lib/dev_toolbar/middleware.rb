@@ -25,11 +25,9 @@ module DevToolbar
               z-index: 1000;
               border: 0.2rem solid red;
               border-radius: 0.6rem;
-              font-weight: bold;
             }
       
             #dev-toolbar a {
-              text-decoration: underline;
               color: #000;
               margin-right: 0.6rem;
             }
