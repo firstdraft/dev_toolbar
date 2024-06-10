@@ -26,7 +26,7 @@ module DevToolbar
               border: 3px solid red;
               border-radius: 10px;
             }
-      
+
             #dev-toolbar a {
               color: black;
               margin-right: 10px;
