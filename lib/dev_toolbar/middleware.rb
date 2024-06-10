@@ -17,16 +17,19 @@ module DevToolbar
             #dev-toolbar {
               position: fixed;
               right: 0;
-              top: 100%;
-              background: #333;
-              color: #fff;
+              bottom: 0;
+              background: #fff;
+              color: #000;
               padding: 0.5rem;
               z-index: 1000;
+              border: 3px solid red;
+              border-radius: 10px;
+              font-weight: bold;
             }
-
+      
             #dev-toolbar a {
-              color: #fff;
-              margin-right: 0.5rem;
+              text-decoration: none;
+              color: #000;
             }
           </style>
         HTML
