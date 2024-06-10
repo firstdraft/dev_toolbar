@@ -17,7 +17,8 @@ module DevToolbar
             #dev-toolbar {
               position: fixed;
               right: 0;
-              top: 0;
+              top: 50%;
+              transform: translateY(-50%) rotate(90deg);
               background: #333;
               color: #fff;
               padding: 0.5rem;
