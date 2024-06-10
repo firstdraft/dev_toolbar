@@ -11,25 +11,25 @@ module DevToolbar
         response_body = response.body
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
-            <div id="dev-toolbar-title">Development Links</div>
+            <div id="dev-toolbar-title">AppDev Toolbar</div>
             #{toolbar_links}
           </div>
           <style>
             #dev-toolbar {
               position: fixed;
-              right: 2%;
-              bottom: 2%;
-              background: #fff;
-              color: #000;
+              right: 10px;
+              bottom: 10px;
+              background: white;
+              color: black;
               padding: 0.5rem;
               z-index: 1000;
-              border: 0.2rem solid red;
-              border-radius: 0.6rem;
+              border: 3px solid red;
+              border-radius: 10px;
             }
       
             #dev-toolbar a {
-              color: #000;
-              margin-right: 0.6rem;
+              color: black;
+              margin-right: 10px;
             }
 
             #dev-toolbar-title {
