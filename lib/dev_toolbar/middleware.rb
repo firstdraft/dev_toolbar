@@ -11,29 +11,53 @@ module DevToolbar
         response_body = response.body
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
-            #{toolbar_links}
+            <button id="dev-toolbar-toggle">🛠️</button>
+            <div id="dev-toolbar-links" class="hidden">
+              #{toolbar_links}
+            </div>
           </div>
           <style>
             #dev-toolbar {
               position: fixed;
-              right: 1%;
+              right: 5%;
               bottom: 25%;
+              z-index: 1000;
+            }
+
+            #dev-toolbar-toggle {
+              font-size: 2em;
+              background: none;
+              border: none;
+              padding: 0;
+              cursor: pointer;
+            }
+
+            #dev-toolbar-links {
+              display: flex;
               background: #fff;
               color: #808080;
               padding: 0.5rem;
-              z-index: 1000;
               border: 3px solid #666666;
               border-radius: 10px;
-              display: flex;
               justify-content: center;
               align-items: center;
             }
 
-            #dev-toolbar a {
+            #dev-toolbar-links.hidden {
+              display: none;
+            }
+
+            #dev-toolbar-links a {
               color: #808080;
               margin-right: 10px;
             }
           </style>
+          <script>
+            document.getElementById('dev-toolbar-toggle').addEventListener('click', function() {
+              var links = document.getElementById('dev-toolbar-links');
+              links.classList.toggle('hidden');
+            });
+          </script>
         HTML
 
         response_body.sub!('</body>', "#{toolbar_html}</body>")
