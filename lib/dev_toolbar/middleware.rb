@@ -12,7 +12,7 @@ module DevToolbar
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
             <div id="dev-toolbar-button">
-              <div id="dev-toolbar-toggle">🛠️</div>
+              <a id="dev-toolbar-toggle">🛠️</a>
             </div>
             <div id="dev-toolbar-links" class="hidden">
               #{toolbar_links}
@@ -39,6 +39,7 @@ module DevToolbar
               border: none;
               cursor: pointer;
               padding: 5px 10px;
+              text-decoration: none;
             }
         
             #dev-toolbar-links {
