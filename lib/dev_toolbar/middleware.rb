@@ -11,7 +11,9 @@ module DevToolbar
         response_body = response.body
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
-            <button id="dev-toolbar-toggle">🛠️</button>
+            <div id="dev-toolbar-button">
+              <button id="dev-toolbar-toggle">🛠️</button>
+            </div>
             <div id="dev-toolbar-links" class="hidden">
               #{toolbar_links}
             </div>
@@ -22,8 +24,11 @@ module DevToolbar
               right: 5%;
               bottom: 25%;
               z-index: 1000;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
             }
-
+        
             #dev-toolbar-toggle {
               font-size: 2em;
               background: none;
@@ -31,9 +36,8 @@ module DevToolbar
               padding: 0;
               cursor: pointer;
             }
-
+        
             #dev-toolbar-links {
-              display: flex;
               background: #fff;
               color: #808080;
               padding: 0.5rem;
@@ -42,11 +46,11 @@ module DevToolbar
               justify-content: center;
               align-items: center;
             }
-
+        
             #dev-toolbar-links.hidden {
               display: none;
             }
-
+        
             #dev-toolbar-links a {
               color: #808080;
               margin-right: 10px;
