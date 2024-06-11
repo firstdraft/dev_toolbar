@@ -12,7 +12,7 @@ module DevToolbar
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
             <div id="dev-toolbar-button">
-              <button id="dev-toolbar-toggle">🛠️</button>
+              <a id="dev-toolbar-toggle">🛠️</a>
             </div>
             <div id="dev-toolbar-links" class="hidden">
               #{toolbar_links}
@@ -21,40 +21,43 @@ module DevToolbar
           <style>
             #dev-toolbar {
               position: fixed;
-              right: 5%;
-              bottom: 50%;
+              right: 0;
+              top: 50vh;
+              transform: translateY(-50%);
+              background-color: #f0f0f0;
+              border: 1px solid #ccc;
               z-index: 1000;
               display: flex;
               flex-direction: column;
               align-items: center;
+              font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+              color: #808080;
             }
         
             #dev-toolbar-toggle {
               font-size: 2em;
-              background: none;
               border: none;
-              padding: 0;
               cursor: pointer;
+              line-height: 1.5;
+              padding: 0 10px;
+              text-decoration: none;
             }
         
             #dev-toolbar-links {
               display: flex;
               flex-direction: column;
-              background: #fff;
-              padding: 0.5rem;
-              border: 3px solid #666666;
-              border-radius: 10px;
-              justify-content: center;
-              align-items: flex-start;
-              gap: 10px;
+            }
+
+            .dev-toolbar-link {
+              padding: 5px 10px;
+              border-bottom: 1px #f0f0f0 solid;
+              color: #808080;
+              text-decoration: none;
+              background-color: white;
             }
         
             #dev-toolbar-links.hidden {
               display: none;
-            }
-        
-            #dev-toolbar-links a {
-              color: #808080;
             }
           </style>
           <script>
@@ -78,7 +81,7 @@ module DevToolbar
 
     def toolbar_links
       DevToolbar.configuration.links.map do |link|
-        "<a href='#{link[:path]}' target='_blank'>#{link[:name]}</a>"
+        "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
       end.join(' ')
     end
   end
