@@ -38,13 +38,14 @@ module DevToolbar
             }
         
             #dev-toolbar-links {
+              display: flex;
               background: #fff;
-              color: #808080;
               padding: 0.5rem;
               border: 3px solid #666666;
               border-radius: 10px;
               justify-content: center;
               align-items: center;
+              gap: 10px;
             }
         
             #dev-toolbar-links.hidden {
@@ -53,7 +54,6 @@ module DevToolbar
         
             #dev-toolbar-links a {
               color: #808080;
-              margin-right: 10px;
             }
           </style>
           <script>
