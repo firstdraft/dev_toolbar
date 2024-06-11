@@ -34,6 +34,14 @@ end
 
 These routes will now appear on every page in your app while in development.
 
+## Updating the gem
+
+1. Pull request and make changes
+2. [Test locally](https://gist.github.com/jonathanroehm/70749fb6f29c61d0af7c7ed9cc233f79)
+2. Bump `lib/dev_toolbar/version.rb`
+3. `gem build dev_toolbar.gemspec`
+4. `gem push dev_toolbar-X.X.X.gem`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/firstdraft/dev_toolbar.
