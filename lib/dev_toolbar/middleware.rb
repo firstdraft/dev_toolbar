@@ -25,40 +25,30 @@ module DevToolbar
               top: 50vh;
               transform: translateY(-50%);
               background-color: #f0f0f0;
-              padding: 10px;
               border: 1px solid #ccc;
               z-index: 1000;
               display: flex;
               flex-direction: column;
-              align-items: center;
+              font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+              color: #808080;
             }
         
             #dev-toolbar-toggle {
               font-size: 2em;
-              background: none;
-              border: none;
-              padding: 0;
-              cursor: pointer;
             }
         
             #dev-toolbar-links {
               display: flex;
               flex-direction: column;
-              background: #fff;
-              padding: 0.5rem;
-              border: 3px solid #666666;
-              border-radius: 10px;
-              justify-content: center;
-              align-items: flex-start;
-              gap: 10px;
+            }
+
+            .dev-toolbar-link {
+              padding: 3px 5px;
+              border-bottom: 1px #f0f0f0 solid;
             }
         
             #dev-toolbar-links.hidden {
               display: none;
-            }
-        
-            #dev-toolbar-links a {
-              color: #808080;
             }
           </style>
           <script>
@@ -83,7 +73,7 @@ module DevToolbar
     def toolbar_links
       DevToolbar.configuration.links.map do |link|
         "<a href='#{link[:path]}' target='_blank'>#{link[:name]}</a>"
-      end.join(' ')
+      end.join('\n')
     end
   end
 end
