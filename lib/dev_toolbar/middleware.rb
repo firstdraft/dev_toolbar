@@ -35,6 +35,7 @@ module DevToolbar
         
             #dev-toolbar-toggle {
               font-size: 2em;
+              border: none;
             }
         
             #dev-toolbar-links {
@@ -72,7 +73,7 @@ module DevToolbar
 
     def toolbar_links
       DevToolbar.configuration.links.map do |link|
-        "<a href='#{link[:path]}' target='_blank'>#{link[:name]}</a>"
+        "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
       end.join('\n')
     end
   end
