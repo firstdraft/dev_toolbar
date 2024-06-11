@@ -29,6 +29,7 @@ module DevToolbar
               z-index: 1000;
               display: flex;
               flex-direction: column;
+              align-items: center;
               font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
               color: #808080;
             }
@@ -46,6 +47,9 @@ module DevToolbar
             .dev-toolbar-link {
               padding: 3px 5px;
               border-bottom: 1px #f0f0f0 solid;
+              color: #808080;
+              text-decoration: none;
+              background-color: white;
             }
         
             #dev-toolbar-links.hidden {
@@ -74,7 +78,7 @@ module DevToolbar
     def toolbar_links
       DevToolbar.configuration.links.map do |link|
         "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
-      end.join('\n')
+      end.join(' ')
     end
   end
 end
