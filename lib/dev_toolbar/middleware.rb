@@ -37,6 +37,7 @@ module DevToolbar
             #dev-toolbar-toggle {
               font-size: 2em;
               border: none;
+              cursor: pointer;
             }
         
             #dev-toolbar-links {
@@ -45,7 +46,7 @@ module DevToolbar
             }
 
             .dev-toolbar-link {
-              padding: 3px 5px;
+              padding: 5px 10px;
               border-bottom: 1px #f0f0f0 solid;
               color: #808080;
               text-decoration: none;
