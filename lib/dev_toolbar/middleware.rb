@@ -21,8 +21,12 @@ module DevToolbar
           <style>
             #dev-toolbar {
               position: fixed;
-              right: 5%;
-              bottom: 50%;
+              right: 0;
+              top: 50vh;
+              transform: translateY(-50%);
+              background-color: #f0f0f0;
+              padding: 10px;
+              border: 1px solid #ccc;
               z-index: 1000;
               display: flex;
               flex-direction: column;
