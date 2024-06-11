@@ -22,8 +22,11 @@ module DevToolbar
               color: #808080;
               padding: 0.5rem;
               z-index: 1000;
-              border: 3px solid #808080;
+              border: 3px solid #666666;
               border-radius: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
 
             #dev-toolbar a {
