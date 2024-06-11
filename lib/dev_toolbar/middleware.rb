@@ -22,7 +22,7 @@ module DevToolbar
             #dev-toolbar {
               position: fixed;
               right: 5%;
-              bottom: 25%;
+              bottom: 50%;
               z-index: 1000;
               display: flex;
               flex-direction: column;
@@ -39,12 +39,13 @@ module DevToolbar
         
             #dev-toolbar-links {
               display: flex;
+              flex-direction: column;
               background: #fff;
               padding: 0.5rem;
               border: 3px solid #666666;
               border-radius: 10px;
               justify-content: center;
-              align-items: center;
+              align-items: flex-start;
               gap: 10px;
             }
         
