@@ -22,11 +22,12 @@ module DevToolbar
               color: #808080;
               padding: 0.5rem;
               z-index: 1000;
-              border: 3px solid #333333;
+              border: 3px solid #808080;
               border-radius: 10px;
             }
 
             #dev-toolbar a {
+              color: #808080;
               margin-right: 10px;
             }
           </style>
