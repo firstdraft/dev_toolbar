@@ -12,7 +12,7 @@ module DevToolbar
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
             <div id="dev-toolbar-button">
-              <button id="dev-toolbar-toggle">🛠️</button>
+              <div id="dev-toolbar-toggle">🛠️</div>
             </div>
             <div id="dev-toolbar-links" class="hidden">
               #{toolbar_links}
