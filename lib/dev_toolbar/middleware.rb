@@ -38,7 +38,7 @@ module DevToolbar
               font-size: 2em;
               border: none;
               cursor: pointer;
-              padding: 10px;
+              line-height: 2;
               text-decoration: none;
             }
         
