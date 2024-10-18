@@ -8,7 +8,6 @@ module DevToolbar
       status, headers, response = @app.call(env)
 
       if Rails.env.development? && headers["Content-Type"]&.include?("text/html")
-        request = Rack::Request.new(env)
         response_body = response.body
         toolbar_html = <<-HTML
           <div id="dev-toolbar">
@@ -16,7 +15,7 @@ module DevToolbar
               <a id="dev-toolbar-toggle">🛠️</a>
             </div>
             <div id="dev-toolbar-links" class="hidden">
-              #{toolbar_links(request)}
+              #{toolbar_links}
             </div>
           </div>
           <style>
@@ -82,8 +81,11 @@ module DevToolbar
 
     def toolbar_links(request)
       DevToolbar.configuration.links.map do |link|
-        href = link[:name] == "View Source" ? "view-source:#{request.base_url}" : link[:path]
-        "<a href='#{href}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
+        if link[:name] == "View Source"
+          "<a href='#' onclick='window.open(\"view-source:\" + window.location.href); return false;' class='dev-toolbar-link'>#{link[:name]}</a>"
+        else
+          "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
+        end
       end.join(' ')
     end
   end
