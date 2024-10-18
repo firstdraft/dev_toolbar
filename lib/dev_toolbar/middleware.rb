@@ -79,7 +79,7 @@ module DevToolbar
 
     private
 
-    def toolbar_links(request)
+    def toolbar_links
       DevToolbar.configuration.links.map do |link|
         if link[:name] == "View Source"
           "<a href='#' onclick='window.open(\"view-source:\" + window.location.href); return false;' class='dev-toolbar-link'>#{link[:name]}</a>"
