@@ -81,8 +81,13 @@ module DevToolbar
 
     def toolbar_links
       DevToolbar.configuration.links.map do |link|
-        "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
-      end.join(' ')
+        # if the erd.png file does not exist in /public, don't show the link
+        if link[:name] == "Data Model" && !File.exist?(Rails.public_path.join("erd.png"))
+          next
+        else
+          "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
+        end
+      end.compact.join(" ")
     end
   end
 end
