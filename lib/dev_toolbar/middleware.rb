@@ -87,7 +87,7 @@ module DevToolbar
         else
           "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
         end
-      end.join(' ')
+      end.compact.join(" ")
     end
   end
 end
