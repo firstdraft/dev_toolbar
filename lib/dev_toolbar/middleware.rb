@@ -87,18 +87,41 @@ module DevToolbar
             erd_html = <<-HTML
               <!DOCTYPE html>
               <html>
-                <head><title>Entity Relationship Diagram</title></head>
-                <body style="text-align: center;">
-                  <h1>Entity Relationship Diagram</h1>
-                  <p>To update this diagram after database changes, run:</p>
-                  <pre style="background: #f0f0f0; padding: 10px; display: inline-block;">
+                <head>
+                  <title>Entity Relationship Diagram</title>
+                </head>
+                <body>
+                  <h1>
+                    Entity Relationship Diagram
+                  </h1>
+                  <p>
+                    To update this diagram after changes to your database or models, run:
+                  </p>
+                  <pre id="instructions">
                     rake erd
                   </pre>
                   <div>
-                    <img src="/erd.png" style="max-width: 100%; margin-top: 20px;">
+                    <img id="erd-image" src="/erd.png">
                   </div>
                 </body>
               </html>
+              <style>
+                body {
+                  text-align: center;
+                  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+                  color: #808080;
+                }
+
+                #instructions {
+                  padding: 10px;
+                  display: flex;
+                }
+
+                #erd-image {
+                  max-width: 100%;
+                  margin-top: 20px;
+                }
+              </style>
             HTML
             
             File.write(Rails.public_path.join("erd.html"), erd_html)
