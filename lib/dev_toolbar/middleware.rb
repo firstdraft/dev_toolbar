@@ -109,11 +109,6 @@ module DevToolbar
                   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
                   color: #808080;
                 }
-
-                #erd-image {
-                  max-width: 100%;
-                  margin-top: 20px;
-                }
               </style>
             HTML
             
