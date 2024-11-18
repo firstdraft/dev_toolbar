@@ -82,41 +82,8 @@ module DevToolbar
     def toolbar_links
       DevToolbar.configuration.links.map do |link|
         # if the erd.png file does not exist in /public, don't show the link
-        if link[:name] == "ERD"
-          if File.exist?(Rails.public_path.join("erd.png"))
-            erd_html = <<-HTML
-              <!DOCTYPE html>
-              <html>
-                <head>
-                  <title>Entity Relationship Diagram</title>
-                </head>
-                <body>
-                  <h1>
-                    Entity Relationship Diagram
-                  </h1>
-                  <p>
-                    To update this diagram after changes to your database or models (e.g. adding association accessors), open a terminal and run the command: <code>rake erd</code>, then close this page and reopen it from the toolbar link.
-                  </p>
-                  <div>
-                    <img id="erd-image" src="/erd.png">
-                  </div>
-                </body>
-              </html>
-              <style>
-                body {
-                  display: flex;
-                  align-items: center;
-                  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-                  color: #808080;
-                }
-              </style>
-            HTML
-            
-            File.write(Rails.public_path.join("erd.html"), erd_html)
-            "<a href='/erd.html' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
-          else
-            next
-          end
+        if link[:name] == "ERD" && !File.exist?(Rails.public_path.join("erd.png"))
+          next
         else
           "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
         end
