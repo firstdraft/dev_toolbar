@@ -95,11 +95,8 @@ module DevToolbar
                     Entity Relationship Diagram
                   </h1>
                   <p>
-                    To update this diagram after changes to your database or models, run:
+                    To update this diagram after changes to your database or models, open a terminal and run: <pre id="instructions">rake erd</pre>
                   </p>
-                  <pre id="instructions">
-                    rake erd
-                  </pre>
                   <div>
                     <img id="erd-image" src="/erd.png">
                   </div>
@@ -110,11 +107,6 @@ module DevToolbar
                   text-align: center;
                   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
                   color: #808080;
-                }
-
-                #instructions {
-                  padding: 10px;
-                  display: flex;
                 }
 
                 #erd-image {
