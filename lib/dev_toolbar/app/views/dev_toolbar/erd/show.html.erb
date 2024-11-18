@@ -33,7 +33,7 @@
       <% if File.exist?(@erd_path) %>
         <img src="data:image/png;base64,<%= Base64.strict_encode64(File.read(@erd_path)) %>" alt="Entity Relationship Diagram">
       <% else %>
-        <p>Entity Relationship Diagram not found.</p>
+        <p>Entity Relationship Diagram not found. If this project has a database, you can generate the ERD with the command above.</p>
       <% end %>
     </div>
   </body>
