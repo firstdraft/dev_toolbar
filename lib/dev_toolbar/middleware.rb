@@ -95,7 +95,7 @@ module DevToolbar
                     Entity Relationship Diagram
                   </h1>
                   <p>
-                    To update this diagram after changes to your database or models, open a terminal and run: <pre id="instructions">rake erd</pre>
+                    To update this diagram after changes to your database or models (e.g. adding association accessors), open a terminal and run the command: <pre>rake erd</pre>
                   </p>
                   <div>
                     <img id="erd-image" src="/erd.png">
