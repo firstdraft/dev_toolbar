@@ -103,7 +103,9 @@ module DevToolbar
             
             File.write(Rails.public_path.join("erd.html"), erd_html)
             "<a href='/erd.html' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
-          next
+          else
+            next
+          end
         else
           "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
         end
