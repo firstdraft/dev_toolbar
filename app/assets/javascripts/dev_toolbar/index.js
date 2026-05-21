@@ -1,7 +1,5 @@
 import Toolbar from "dev_toolbar/toolbar"
 
-Toolbar.render();
-
 function waitForElementToExist(selector) {
   return new Promise(resolve => {
     if (document.querySelector(selector)) {
@@ -23,6 +21,7 @@ function waitForElementToExist(selector) {
 }
 
 document.addEventListener("turbo:load", function() {
+  Toolbar.render();
   waitForElementToExist("#dev-toolbar-toggle").then( () => {
     document.getElementById("dev-toolbar-toggle").addEventListener("click", function() {
       var links = document.getElementById("dev-toolbar-links");
