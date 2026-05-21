@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entity Relationship Diagram</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <style>
+      body {
+        width: 95%;
+        max-width: 33em;
+        margin: 4em auto 0;
+        text-align: center;
+        font-family: arial, sans-serif;
+        line-height: 1.5em;
+        color: #808080;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Entity Relationship Diagram</h1>
+    <p>To update this diagram after changes to your database or models (e.g. adding association accessors), open a terminal and run the command:</p>
+    <div>
+      <code>rake erd</code>
+    </div>
+    <p>Then refresh this page.</p>
+    <div>
+      <% if File.exist?(@erd_path) %>
+        <img src="data:image/png;base64,<%= Base64.strict_encode64(File.read(@erd_path)) %>" alt="Entity Relationship Diagram">
+      <% else %>
+        <p>Entity Relationship Diagram not found. If this project has a database, you can generate the ERD with the command above.</p>
+      <% end %>
+    </div>
+  </body>
+</html>
