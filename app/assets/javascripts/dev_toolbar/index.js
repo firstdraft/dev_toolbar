@@ -22,9 +22,11 @@ function waitForElementToExist(selector) {
   });
 }
 
-waitForElementToExist("#dev-toolbar-toggle").then( () => {
-  document.getElementById("dev-toolbar-toggle").addEventListener("click", function() {
-    var links = document.getElementById("dev-toolbar-links");
-    links.classList.toggle("hidden");
+document.addEventListener("turbo:load", function() {
+  waitForElementToExist("#dev-toolbar-toggle").then( () => {
+    document.getElementById("dev-toolbar-toggle").addEventListener("click", function() {
+      var links = document.getElementById("dev-toolbar-links");
+      links.classList.toggle("hidden");
+    });
   });
 });
