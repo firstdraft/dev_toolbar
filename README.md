@@ -35,6 +35,16 @@ if Rails.env.development?
 end
 ```
 
+Include the JavaScript:
+```rb
+# config/importmap.rb
+pin "dev_toolbar", to: "dev_toolbar/index.js"
+pin "dev_toolbar/toolbar", to: "dev_toolbar/toolbar.js"
+
+# app/javascripts/application.js
+import "dev_toolbar"
+```
+
 These routes will now appear on every page in your app while in development.
 
 ## Updating the gem

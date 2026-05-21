@@ -4,11 +4,11 @@ module DevToolbar
 
     config.assets.paths << root.join("app/assets/stylesheets")
 
-   initializer 'dev_toolbar.assets_precompile', :group => :all do |app|
+    initializer "dev_toolbar.assets_precompile", group: :all do |app|
       # Only configure asset precompilation if Sprockets is available
       if defined?(Sprockets) && app.config.respond_to?(:assets)
         app.config.assets.precompile += [
-          "dev_toolbar/engine.js", 
+          "dev_toolbar/toolbar.js", 
           "dev_toolbar/index.js", 
         ]
       end

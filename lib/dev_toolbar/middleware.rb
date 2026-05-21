@@ -24,17 +24,6 @@ module DevToolbar
 
     private
 
-    def toolbar_links
-      DevToolbar.configuration.links.map do |link|
-        # if the erd.png file does not exist in /public, don't show the link
-        if link[:name] == "ERD" && !File.exist?(Rails.root.join("erd.png"))
-          next
-        else
-          "<a href='#{link[:path]}' target='_blank' class='dev-toolbar-link'>#{link[:name]}</a>"
-        end
-      end.compact.join(" ")
-    end
-
     def toolbar_links_content
       JSON.generate(DevToolbar.configuration.links)
     end

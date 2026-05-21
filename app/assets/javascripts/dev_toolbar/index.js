@@ -1,6 +1,6 @@
-import Engine from "dev_toolbar/engine"
+import Toolbar from "dev_toolbar/toolbar"
 
-Engine.render();
+Toolbar.render();
 
 function waitForElementToExist(selector) {
   return new Promise(resolve => {
@@ -21,9 +21,10 @@ function waitForElementToExist(selector) {
     });
   });
 }
-waitForElementToExist("#dev-toolbar-toggle").then(element => {
+
+waitForElementToExist("#dev-toolbar-toggle").then( () => {
   document.getElementById("dev-toolbar-toggle").addEventListener("click", function() {
     var links = document.getElementById("dev-toolbar-links");
     links.classList.toggle("hidden");
   });
-})
+});
