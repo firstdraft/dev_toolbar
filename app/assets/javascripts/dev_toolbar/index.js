@@ -21,7 +21,9 @@ function waitForElementToExist(selector) {
 }
 
 document.addEventListener("turbo:load", function() {
-  Toolbar.render();
+  if (!document.getElementById("dev-toolbar")) {
+    Toolbar.render();
+  }
   waitForElementToExist("#dev-toolbar-toggle").then( () => {
     document.getElementById("dev-toolbar-toggle").addEventListener("click", function() {
       var links = document.getElementById("dev-toolbar-links");
