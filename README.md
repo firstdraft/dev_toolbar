@@ -36,14 +36,12 @@ end
 ```
 
 Include the JavaScript:
-```rb
-# config/importmap.rb
-pin "dev_toolbar", to: "dev_toolbar/index.js"
-pin "dev_toolbar/toolbar", to: "dev_toolbar/toolbar.js"
-
-# app/javascripts/application.js
+```js
+// app/javascript/application.js
 import "dev_toolbar"
 ```
+
+The importmap pin is added automatically by the engine.
 
 These routes will now appear on every page in your app while in development.
 
