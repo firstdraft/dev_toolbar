@@ -19,8 +19,9 @@ function waitForElementToExist(selector) {
     });
   });
 }
+const loadEvent = self.hasOwnProperty("Turbo") ? "turbo:load" : "DOMContentLoaded";
 
-document.addEventListener("turbo:load", function() {
+document.addEventListener(loadEvent, function() {
   if (!document.getElementById("dev-toolbar")) {
     Toolbar.render();
   }
