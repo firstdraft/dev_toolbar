@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    dev_toolbar (0.1.0)
-      rails (~> 7.0)
+    dev_toolbar (2.1.0)
+      rails (>= 7.0)
 
 GEM
   remote: https://rubygems.org/
@@ -122,6 +122,8 @@ GEM
     nio4r (2.7.3)
     nokogiri (1.16.5-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.16.5-x86_64-linux)
+      racc (~> 1.4)
     psych (5.1.2)
       stringio
     racc (1.8.0)
@@ -180,6 +182,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bundler (~> 2.0)

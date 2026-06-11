@@ -4,7 +4,7 @@ module DevToolbar
     
     def show
       @erd_path = Rails.root.join("erd.png")
-      render :show
+      render "dev_toolbar/erd/show", formats: [:html]
     end
   end
 end

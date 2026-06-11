@@ -1,0 +1,34 @@
+import Toolbar from "dev_toolbar/toolbar"
+
+function waitForElementToExist(selector) {
+  return new Promise(resolve => {
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+
+    const observer = new MutationObserver(() => {
+      if (document.querySelector(selector)) {
+        resolve(document.querySelector(selector));
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      subtree: true,
+      childList: true,
+    });
+  });
+}
+const loadEvent = self.hasOwnProperty("Turbo") ? "turbo:load" : "DOMContentLoaded";
+
+document.addEventListener(loadEvent, function() {
+  if (!document.getElementById("dev-toolbar")) {
+    Toolbar.render();
+  }
+  waitForElementToExist("#dev-toolbar-toggle").then( () => {
+    document.getElementById("dev-toolbar-toggle").addEventListener("click", function() {
+      var links = document.getElementById("dev-toolbar-links");
+      links.classList.toggle("hidden");
+    });
+  });
+});
