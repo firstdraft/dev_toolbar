@@ -41,8 +41,15 @@ Include the JavaScript:
 pin "dev_toolbar", to: "dev_toolbar/index.js"
 pin "dev_toolbar/toolbar", to: "dev_toolbar/toolbar.js"
 
-# app/javascripts/application.js
+```js
+// app/javascripts/application.js
 import "dev_toolbar"
+```
+
+Include the CSS:
+```css
+/* app/assets/stylesheets/application.css */
+@import url("dev_toolbar.css");
 ```
 
 These routes will now appear on every page in your app while in development.
